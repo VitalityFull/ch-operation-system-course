@@ -1,0 +1,317 @@
+P1到达系统并获得了资源，进入就绪队列
+P2到达系统并获得了资源，进入就绪队列
+cpu空闲
+P1获得cpu
+正在运行进程：P1
+就绪队列：P2
+等待队列：
+完成队列：
+name order state arrivalTime needTime haveTime
+P1        3        E            0	   5          1
+P2        5        R            0	   10          0
+P3        1                     1	   2          0
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+P3到达系统并获得了资源，进入就绪队列
+P3抢占P1的cpu
+正在运行进程：P3
+就绪队列：P2，P1
+等待队列：
+完成队列：
+name order state arrivalTime needTime haveTime
+P1        3        R            0	   5          1
+P2        5        R            0	   10          0
+P3        1        E            1	   2          1
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+P3运行完成，进入完成队列
+正在运行进程：
+就绪队列：P2，P1
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        3        R            0	   5          1
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+cpu空闲
+P1获得cpu
+正在运行进程：P1
+就绪队列：P2
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        3        E            0	   5          2
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+P1运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P2，P1
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        R            0	   5          3
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+cpu空闲
+P1获得cpu
+正在运行进程：P1
+就绪队列：P2
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        E            0	   5          4
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        2                     6	   6          0
+P5        8                     10	   4          0
+P4到达系统并获得了资源，进入就绪队列
+P4抢占P1的cpu
+正在运行进程：P4
+就绪队列：P2，P1
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        R            0	   5          4
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        2        E            6	   6          1
+P5        8                     10	   4          0
+P4运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P2，P1，P4
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        R            0	   5          4
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        3        R            6	   6          2
+P5        8                     10	   4          0
+cpu空闲
+P4获得cpu
+正在运行进程：P4
+就绪队列：P2，P1
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        R            0	   5          4
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        3        E            6	   6          3
+P5        8                     10	   4          0
+P4运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P2，P1，P4
+等待队列：
+完成队列：P3
+name order state arrivalTime needTime haveTime
+P1        4        R            0	   5          4
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        4        R            6	   6          4
+P5        8                     10	   4          0
+P5到达系统未获得资源，进入等待队列
+cpu空闲
+P1获得cpu
+P1运行完成，进入完成队列
+正在运行进程：
+就绪队列：P2，P4
+等待队列：P5
+完成队列：P3，P1
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        4        R            6	   6          4
+P5        8        W            10	   4          0
+P5得到了IO资源，移出等待队列，进入就绪队列
+cpu空闲
+P4获得cpu
+正在运行进程：P4
+就绪队列：P2，P5
+等待队列：
+完成队列：P3，P1
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        4        E            6	   6          5
+P5        8        R            10	   4          0
+P4运行完成，进入完成队列
+正在运行进程：
+就绪队列：P2，P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        5        R            0	   10          0
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+cpu空闲
+P2获得cpu
+正在运行进程：P2
+就绪队列：P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        5        E            0	   10          1
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+P2运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P5，P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        6        R            0	   10          2
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+cpu空闲
+P2获得cpu
+正在运行进程：P2
+就绪队列：P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        6        E            0	   10          3
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+P2运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P5，P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        7        R            0	   10          4
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+cpu空闲
+P2获得cpu
+正在运行进程：P2
+就绪队列：P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        7        E            0	   10          5
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+P2运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P5，P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        8        R            0	   10          6
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        R            10	   4          0
+cpu空闲
+P5获得cpu
+正在运行进程：P5
+就绪队列：P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        8        R            0	   10          6
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        8        E            10	   4          1
+P5运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P2，P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        8        R            0	   10          6
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        R            10	   4          2
+cpu空闲
+P2获得cpu
+正在运行进程：P2
+就绪队列：P5
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        8        E            0	   10          7
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        R            10	   4          2
+P2运行时间已达一个时间片，放弃cpu，优先级降低，进入就绪队列
+正在运行进程：
+就绪队列：P5，P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        9        R            0	   10          8
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        R            10	   4          2
+cpu空闲
+P5获得cpu
+正在运行进程：P5
+就绪队列：P2
+等待队列：
+完成队列：P3，P1，P4
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        9        R            0	   10          8
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        E            10	   4          3
+P5运行完成，进入完成队列
+正在运行进程：
+就绪队列：P2
+等待队列：
+完成队列：P3，P1，P4，P5
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        9        R            0	   10          8
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        F            10	   4          4
+cpu空闲
+P2获得cpu
+正在运行进程：P2
+就绪队列：
+等待队列：
+完成队列：P3，P1，P4，P5
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        9        E            0	   10          9
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        F            10	   4          4
+P2运行完成，进入完成队列
+正在运行进程：
+就绪队列：
+等待队列：
+完成队列：P3，P1，P4，P5，P2
+name order state arrivalTime needTime haveTime
+P1        4        F            0	   5          5
+P2        9        F            0	   10          10
+P3        1        F            1	   2          2
+P4        4        F            6	   6          6
+P5        9        F            10	   4          4
